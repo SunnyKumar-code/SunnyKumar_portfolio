@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Bio}from '../../data/constants'
+import { Bio } from '../../data/constants'
 import Typewriter from "typewriter-effect";
 import HeroImg from "../../images/profile.jpg"
 import HeroBgAnimation from '../../HeroBgAnimation/HeroBgAnimation'
 import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion'
+import { headContainerAnimation, headContentAnimation, headTextAnimation } from '../../utils/motion'
+import StyledStarsCanvas from '../canvas/Stars'
 
 const HeroContainer = styled.div`
 display: flex;
@@ -20,7 +23,7 @@ z-index: 1;
 }
 clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
-const HeroInner =styled.div`
+const HeroInner = styled.div`
   position: relative;
   display: flex;
   gap: 40px;
@@ -76,7 +79,7 @@ font-weight: 700;
     line-height: 48px;
     margin-bottom: 8px;
   }`
-  const TextLoop = styled.div`
+const TextLoop = styled.div`
    font-weight: 600;
   font-size: 32px;
   display: flex;
@@ -100,7 +103,7 @@ cursor: pointer;
   color: ${({ theme }) => theme.primary};
 
   `
-  const SubTitle = styled.div`
+const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
@@ -202,33 +205,44 @@ const HeroSection = () => {
     <div id='about'>
       <HeroContainer>
         <HeroBg>
-            <HeroBgAnimation/>
+          <StyledStarsCanvas/>
+          <HeroBgAnimation />
         </HeroBg>
-        <HeroInner>
-    <HeroLeftContainer>
-      <Title>Hi, I am <br /> {Bio.name}</Title>  
-      <TextLoop>
-        I am a 
-        <Span>
-            <Typewriter
-            options={{
-                strings:Bio.roles,
-                autoStart:true,
-                loop:true,
-            }}
-            />
-        </Span>
-      </TextLoop>
-      <SubTitle>{Bio.description}</SubTitle>
-      <ResumeButton>Check Resume</ResumeButton>
-    </HeroLeftContainer>
-    <HeroRightContainer>
-        <Tilt>
+        <motion.div {...headContentAnimation}>
+          <HeroInner>
+            <HeroLeftContainer>
+              <motion.div {...headTextAnimation}>
+                <Title>Hi, I am <br /> {Bio.name}</Title>
+                <TextLoop>
+                  I am a
+                  <Span>
+                    <Typewriter
+                      options={{
+                        strings: Bio.roles,
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </Span>
+                </TextLoop>
+              </motion.div>
+              <motion.div {...headContentAnimation}>
 
-        <Img src={HeroImg} alt="Sunny Kumar"/>
-        </Tilt>
-    </HeroRightContainer>
-        </HeroInner>
+                <SubTitle>{Bio.description}</SubTitle>
+              </motion.div>
+              <ResumeButton>Check Resume</ResumeButton>
+            </HeroLeftContainer>
+            <HeroRightContainer>
+              <motion.div {...headContentAnimation}>
+                <Tilt>
+                  <Img src={HeroImg} alt="Sunny Kumar" />
+                </Tilt>
+              </motion.div>
+
+            </HeroRightContainer>
+          </HeroInner>
+
+        </motion.div>
       </HeroContainer>
     </div>
   )
