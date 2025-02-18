@@ -281,7 +281,7 @@ export const projects = [
     image:
       "https://github.com/SunnyKumar-code/screenshort/blob/main/movie.png?raw=true",
     category: "web app",
-    github: "https://github.com/rishavchanda/Quiz-Earn",
+    github: "https://github.com/SunnyKumar-code/movie-app.git",
     webapp: "https://sunnykumar-code.github.io/movie-app/",
   },
   {
