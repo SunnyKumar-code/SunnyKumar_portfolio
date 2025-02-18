@@ -4,13 +4,13 @@ import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
 import { education } from "../../data/constants";
 import EducationCard from "../cards/EducationCard";
-import EarthCanvas from "../canvas/Earth";
+import EarthCanvas from '../canvas/Earth'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
-  position: rlative;
+  justify-content: center;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -53,6 +53,7 @@ const Education = () => {
   return (
     <Container id="Education">
       <Wrapper>
+      
         <Title>Education</Title>
         <Desc
           style={{

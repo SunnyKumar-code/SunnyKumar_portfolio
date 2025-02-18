@@ -202,7 +202,7 @@ const HeroBg = styled.div`
 `;
 const HeroSection = () => {
   return (
-    <div id='about'>
+    <div id='About'>
       <HeroContainer>
         <HeroBg>
           <StyledStarsCanvas/>
@@ -230,7 +230,7 @@ const HeroSection = () => {
 
                 <SubTitle>{Bio.description}</SubTitle>
               </motion.div>
-              <ResumeButton>Check Resume</ResumeButton>
+              <ResumeButton href={Bio.resume} target='_blank'>Check Resume</ResumeButton>
             </HeroLeftContainer>
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
