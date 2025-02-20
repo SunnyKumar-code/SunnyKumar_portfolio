@@ -21,6 +21,7 @@ const FooterWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   display: flex;
+  
   flex-direction: column;
   gap: 14px;
   align-items: center;
