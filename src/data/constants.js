@@ -201,15 +201,15 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Personal Information App",
+    title: "Netflix",
     date: "",
     description:
       "This is a simple web application built using React.js that allows you to add new personal information and retrieve it. The app consists of two main components: AddNewPerson and RetrieveInformation",
     image:
-      "https://github.com/SunnyKumar-code/screenshort/blob/main/persnol.png?raw=true",
-    category: "wev app",
-    github: "https://github.com/SunnyKumar-code/Personal-Information-App-React.git",
-    webapp: "https://personal-information-app-react.vercel.app/",
+      "https://github.com/SunnyKumar-code/screenshort/blob/main/netflix.png?raw=true",
+    category: "web app",
+    github: "https://github.com/SunnyKumar-code/Netfilx-Clone.git",
+    webapp: "https://netfilx-clone-jet.vercel.app/",
 
   },
   {
